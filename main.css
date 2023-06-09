@@ -33,6 +33,90 @@
      object-position: top;
 }
 
+.rus-map__header {
+  background: #f3f3f3;
+  border-radius: 24px;
+  padding: 20px 30px;
+}
+.rus-map__header .back-link {
+  margin-right: 100px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+  font-family: "Roboto";
+  font-style: normal;
+  color: #f04d44;
+}
+.rus-map__header .back-link:before {
+  content: "";
+  margin-right: 20px;
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='25' height='26' viewBox='0 0 25 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0 13.0001C0 19.8916 5.60755 25.499 12.5 25.499C19.3922 25.499 25 19.8917 25 13.0001C25 6.10775 19.3922 0.500801 12.5 0.500801C5.60755 0.500801 0 6.10775 0 13.0001ZM16.6372 5.37115C16.8154 5.54966 16.9053 5.78358 16.9053 6.01735C16.9053 6.25156 16.8154 6.4854 16.6372 6.66399L10.3015 13.0001L16.6372 19.3356C16.9943 19.6928 16.9943 20.2724 16.6372 20.6296C16.2801 20.987 15.7011 20.987 15.3439 20.6296L8.36196 13.6468C8.00486 13.2892 8.00486 12.7113 8.36196 12.3544L15.3439 5.37159C15.7011 5.01397 16.2801 5.01397 16.6372 5.37115Z' fill='%23F04D44'/%3e%3c/svg%3e ");
+}
+.rus-map__header .rus-map__wrap,
+.rus-map__header .rus-map__data {
+  display: flex;
+  align-items: center;
+}
+.rus-map__header .data-block {
+  display: flex;
+  padding: 0px 30px;
+  border-left: 1px solid #fff;
+}
+.rus-map__header .data-block__l {
+  margin-right: 10px;
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 50px;
+  color: #f04d44;
+}
+.rus-map__header .data-block__t {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  color: #3e434a;
+}
+.rus-map__header .rus-map__toggle {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #3e434a;
+  position: relative;
+  text-decoration: none;
+  padding: 10px 0;
+}
+.rus-map__header .rus-map__toggle:before {
+  position: absolute;
+  width: 100%;
+  display: block;
+  bottom: -24px;
+  left: 0;
+  content: "";
+  height: 2px;
+  background-color: transparent;
+}
+.rus-map__header .rus-map__toggle:not(:last-child) {
+  margin-right: 40px;
+}
+.rus-map__header .rus-map__toggle.active {
+  color: #f04d44;
+}
+.rus-map__header .rus-map__toggle.active:before {
+  background-color: #f04d44;
+}
+.rus-map__header .rus-map__toggles {
+  margin-left: auto;
+}
+
 .location_ico {
   pointer-events: none;
   width: 0.8%;
