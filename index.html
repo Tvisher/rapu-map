@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://rapu.ru/bitrix/templates/rapu/opt/css/map.css?16789117605236">
     <link rel="stylesheet" href="main.css">
 </head>
 
@@ -33,7 +36,7 @@
     </header>
     <section class="rus-map">
         <div class="rus-map__svg">
-            <div class="location_ico" data-ico="region_1">
+            <div class="location_ico" data-ico="region_5">
                 <svg width="16" height="23" viewBox="0 0 16 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M7.72712 0.170898C3.48557 0.170898 0.0471191 3.67183 0.0471191 7.9905C0.0471191 13.576 7.72712 22.5127 7.72712 22.5127C7.72712 22.5127 15.4071 13.576 15.4071 7.9905C15.4071 3.67183 11.9687 0.170898 7.72712 0.170898ZM7.72712 10.7832C6.21197 10.7832 4.98427 9.5332 4.98427 7.9905C4.98427 6.4478 6.21197 5.19777 7.72712 5.19777C9.24227 5.19777 10.47 6.4478 10.47 7.9905C10.47 9.5332 9.24227 10.7832 7.72712 10.7832Z"
@@ -1037,6 +1040,85 @@
             </svg>
         </div>
     </section>
+    <div class="modal map-modal fade" id="info-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <div class="modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-none map-popovers">
+        <div class="map-card" data-city="region_5">
+            <div class="map-card__header">
+                <h2 class="map-card__title">Самарская область</h2>
+            </div>
+            <div class="map-card__body">
+                <table class="map-company-table">
+                    <tr>
+                        <td class="map-company-field map-company-field--city">
+                            <div>
+                                <div class="map-company-field__name">Город</div>
+                                <div class="map-company-field__value">Тольятти</div>
+                            </div>
+                            <img src="data:image/webp;base64,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"
+                                class="map-company-logo map-company-logo--mobile" decoding="async"
+                                data-origin="/bitrix/templates/rapu/opt/img/map-companies/1@2x.png">
+                        </td>
+                        <td class="map-company-field">
+                            <div class="map-company-field__name">Название</div>
+                            <div class="map-company-field__value">ЗАО Корпорация «Тольяттиазот»</div>
+                        </td>
+                        <td class="map-company-field">
+                            <div class="map-company-field__name">Компания</div>
+                            <div class="map-company-field__value">ЗАО Корпорация «Тольяттиазот»</div>
+                            <img src="data:image/webp;base64,UklGRhoDAABXRUJQVlA4WAoAAAAQAAAAFQAAFQAAQUxQSA0BAAABkGNr27FXT2zbtm3bdirb5hBSqksGkDKdbdup7eToW3fx6QwhIiaAuBUDGsfHmgIUSbBW9wk4T7u1BMScQuBpDE/BNwR/F3JEfEHkdyQRqZ9B9LkGURsArEzNLa6sbW5vXwBAJ8kfA3jXk5CQlJKSlJRMYp0qeDMALp0d3dRIxkhHt4bF+JYCwL9ff++MJaqHnh8/WSgZZAEopvQCxXVwj/JMSOpsl5P9PddIKce9hUSTrQRR9j+OEi8GwN9iSpysb2pyowEGAOMjfwTgob3tEgCu2zqeAZzIUwv+YxuR2om4UzUiCv0U8xVG7JxPYZ+5xB1+KOQogvjV2g8YFnPYrk6C5X1KhoZLfOSJGwBWUDgg5gEAADALAJ0BKhYAFgA+bS6SRqQioaEoDVCADYlsDLAAzEAFmEdV4oXQLvhko/LFigwwH6X+sB+IHUq9ZL6AH6V+lV7H/7H+jdRwNlwBAauMZrHdylcWzBx6F7MH0A6p1h76HxmAAPnN8lhfgHU0BVfzKrWo6A3qVvPzAlSwB6Ec85zCORbEc96nhhH9//8l+3AVTiFvudVgfnAv35A/6r/DNuj0J2t7y3PVnwT5qGYo4/YsdP3/GoLMxyp770sFqIbHvStPfYsLNvQkbZQmVzHdgciMnjQP/3Ntrxo4CKXP4QN0bfZ0PFJH+2T1zyQ74JGikYbPFaRzCtfwYMRy86KKfoM6Vnm0aQct+I6QtlkdpX7XaGFi3ezS+5TniS9Sd6o3l2vFdUrMkc6/nqwnMuJBGDFGqB1/D+DWT2S/tLaJtX2g6E8Zh/q/hjT5NitISNK8Meqp8HDjreBO3hNOx+O5W6F89zfyqburMB0H0CVMDoVF3OnZoKGOFWG3/0DXkGtI5vlKVi5NbFN9PbAXdf+FwJ3wC1FKe0Ar7TfgRP3rMfmYSn/4ZQDDltYr7GA2H7Jy4Xzij9n3m/7bP+Qr6+riJuJPyKLhs9uXtZKpreTp3EIv7Hs7Vnm3cp9ctu+j+WldvxNY4jAAAA=="
+                                srcset="data:image/webp;base64,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 2x"
+                                alt class="map-company-logo" decoding="async"
+                                data-origin="/bitrix/templates/rapu/opt/img/map-companies/1.png">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="map-company-field map-company-field--city">
+                            <div>
+                                <div class="map-company-field__name">Город</div>
+                                <div class="map-company-field__value">Тольятти</div>
+                            </div>
+                            <img src="data:image/webp;base64,UklGRswFAABXRUJQVlA4WAoAAAAQAAAAKwAAKwAAQUxQSAEBAAABgLNt2/HmTm03HDPVtjHZ5mzu1tR/0T3NnK0/gVsn2wye4sP7PlPHiJgAaI4w2r9I85fdGAHB/nkOEujICxQzSoKnagRMbJNwz4Su2leS+Fqro/qOpN5Va6pwk2R3hYZSN0l3F6kdEsObaqX5Bw60o1D/Tiwf6v70ENOpYCBqmQtlAVnEdiEkxsWHLBZinBjP6aKW0z/tCKsoTj4Lp6T4PUZmZPJxxaCMTzoQtcymBECrl8lUMADD1huL9zooHnHwzEO5jUMz1Pvk9ULrsEeS26jJMOCW4T6u9tMErMhYgf41pyjnGkQGte8K2QyEYFveiZ6TvLwIiI8zjmgZMcZBJwBWUDggpAQAABAWAJ0BKiwALAA+bSyORaQioRjszgBABsS2AE6ZXsJjxbzIaS4ulxT0AbaHndfRLvHW8q/4CvaPrXhH4XfUHsllFfs/5acgPukyVf3renuRf17/Ud7RqBdgPNG/03k1+GxHT5yn/B9x3tN+dv+d/jfgE/l/9c/3HYD9Db9URDeNs2eDIGpTDCeTbgVGtFjPeKdxPCivLpSMhqSAeKGdnnbq0ntTl14gH40cH4wROiHbP4xIzBoZ4L/QAPb+cuvM2r6L7cSdN8xXkNoeImlKvPydIQk5Z785O3H70I0WQD/tGy+zu21VD26fjema48mWa8YBFqn0flR0a8zlex2K61dS3q3xQvnp0xW2PI+mYVNt0jsKBmRtegwuKNBoUvb1MSQqijJfjflVSw+SA8GbXizoi9JWPYRJmFkAxG96VXKvxc78/Zi7DVdvWC6+g+xDDGr5qq1UZKgekgXqo8SijykP03RWwsOsPvXhbJkZNpp7alHDVX1jwD3bSzDdDS195P7Yd/d+TZbtpZV0XtTAGXXIIJXd/9V/4pOrwL2N/3SEjkCTOfPd9CUdlD95Ko1dM/0xk9ZxhAu266Mqg6tdScj8wPAuRDZzd23NK4sV6oyb7j3al2yf8NW2/WpTgl8RmUJ10nyb/NJriT3aSM1LCo8TYfn9qeFuplvRlQr5gqAgZLWrHpavHB/OCJT5DSt+52rbsPaaLNBS346d4pGeq0Ltj10qslRRmxivKoWC/2iVXyabhS1/L4o+EGXanONFXIV0n3H8l3Oj3eT1Heh12GFnuZ4tNi6pXr+MwYSYWg6yLBHUNoI8/Ir+7WslEmVs3fWWAKFP0aCLHLYlq9X/V+MBjaeod1e2qdsxy8b5TD0NG3G/90B1h9N0r94lHU1+zrCMafTl//lPbxB/x859EC9vIJORgewTgmboq5qL8SjV2/mHLlGx2HPeJ0Lk4m7iGHi5scb84PEomLIbnV6m/bYTT+jQIdHR8HTvIyKD79eTaoBdmRUCTv/Awv7/QdaroFrmgnbMf9nZ/FxaZfdeaiKqxj76ay/NpJMMenzvLyBTak2Djm42YifaoG06O0nTJMFa6DmCucJeYrMFOa/f49af9PRr4RlThMN+JFOQ7A3LP+j+1esa8qmnC1bRXJJUeYUmWMV78iU7dSpaM27g1Y//Twt/8fn4H1zlqIcZsvIkCvRxOBnx4alz0uI9QyXHLMCe+0xyZopKWC3kZC8MeMbMI8GFu5qKZ//qD6+m85YPKwnAOLE8ZpOzg9rArNNti8a2qk1a1UDkScPGhRzYzf88WUJmbURBhIGDK2qpPwv6pn1WidQ3W0MxxVgQ28DXnAQ4qprWep7S4s/th0GSm+nb1LLgqddjbikopS6pJFT0ss5Wde7d1ZHFlEedrzYOCGKAaB30lPAk2iEO1rz4CzQLWLfUYZBwrdqAcPL4GUjo+rf2e9wPbqJ9LgLC/74wxdckz4eVrG3kaEQfRxCMKK2cA+Ve+weGFHXomStP/xQ/t8RJ4SMbZV6h/iXn/8YUQv//rKHXuv2FGXmH+UDeANc1fUZr9YGqmcOS+xhPMpibQAAAAA=="
+                                alt class="map-company-logo map-company-logo--mobile" decoding="async"
+                                data-origin="/bitrix/templates/rapu/opt/img/map-companies/2@2x.png">
+                        </td>
+                        <td class="map-company-field">
+                            <div class="map-company-field__name">Предприятие</div>
+                            <div class="map-company-field__value">ПАО «КуйбышевАзот»</div>
+                        </td>
+                        <td class="map-company-field">
+                            <div class="map-company-field__name">Компания</div>
+                            <div class="map-company-field__value">ПАО «КуйбышевАзот»</div>
+                            <img src="data:image/webp;base64,UklGRs4CAABXRUJQVlA4WAoAAAAQAAAAFQAAFQAAQUxQSJkAAAABgGNt2/Hoibuc9OnYOq3NLViryBLMNrMCm/2UVm2Uxu//f8+sICImAEKNZ8aIzjxqSJuGH4zkx4JDwn7OyL6xi9guGYWXFgC6TUbxmQkoMoQtaBYpLo3+TwqmUGFIbz9o/vkhUYpmbn6ieHNqlymODfC8EjRVQFtZRwtA21NypINQM5b1NzVDXB9dlzrNayFTE9gV7AYMEAUAVlA4IA4CAADwCwCdASoWABYAPm0ylUekIqIhKAgAgA2JaACdMoRwMOA2zMc/YDnlvP/30neXZaBjuuyQ4GfnG82TtA9nHzF/pfcA/jf89/0XWw/Z32O/1mDVwnalmIkr/OQ75ueb2QHnWpInxY4ZgAD2nrq2C662Kofk5bM8NXAyx35iTfQCyjqU9Txo9uS3spa5Dq3yVRqzEiR/Jwi0u62MsAYBSrPFP5DvxNp/WY46/0R3h1N9sAP9NN8ywIZzkvcyN7vKKdEVL3bK5hWdHgnuusPWfC646JYwGn6fZ95tuSH+k7HrGjnj92z/HdHO3j1PfRqJhddfN7nwQu7+Ub55XKWXuQm49GiUQs/w6uVBYqCskRwCiBaqHugo9c3P7fsr6u2oj8SVIck26+TWJnICa3mzQP8qPiY/9M6+41uDtVxvB8mMF24Iwmz/9HR5ovVxDayfqjRYZY514q+QnU9yCvBGow9Gp1DH86jc+EdUb5Ft+DcXXDjSKrnx9qe9P2Q1OUB+Xr+wqTBGHhK8mywe1W74vyVHwUEvO2GT0r8QZwBwSf7zMdg5BLn+vskvjjXmhS+u+Yg5TYdhwD/mng7nf9/rCU2utjoPtGuctI5eYeEKG+BmcFVERuubSi3f2jssPk5PaGjWyW65Ntof3kZ+fAayRlW4Zy7BwC0JU2Xi5TS8gCGApRTgjfss6Vxv58AJYAAA"
+                                srcset="data:image/webp;base64,UklGRswFAABXRUJQVlA4WAoAAAAQAAAAKwAAKwAAQUxQSAEBAAABgLNt2/HmTm03HDPVtjHZ5mzu1tR/0T3NnK0/gVsn2wye4sP7PlPHiJgAaI4w2r9I85fdGAHB/nkOEujICxQzSoKnagRMbJNwz4Su2leS+Fqro/qOpN5Va6pwk2R3hYZSN0l3F6kdEsObaqX5Bw60o1D/Tiwf6v70ENOpYCBqmQtlAVnEdiEkxsWHLBZinBjP6aKW0z/tCKsoTj4Lp6T4PUZmZPJxxaCMTzoQtcymBECrl8lUMADD1huL9zooHnHwzEO5jUMz1Pvk9ULrsEeS26jJMOCW4T6u9tMErMhYgf41pyjnGkQGte8K2QyEYFveiZ6TvLwIiI8zjmgZMcZBJwBWUDggpAQAABAWAJ0BKiwALAA+bSyORaQioRjszgBABsS2AE6ZXsJjxbzIaS4ulxT0AbaHndfRLvHW8q/4CvaPrXhH4XfUHsllFfs/5acgPukyVf3renuRf17/Ud7RqBdgPNG/03k1+GxHT5yn/B9x3tN+dv+d/jfgE/l/9c/3HYD9Db9URDeNs2eDIGpTDCeTbgVGtFjPeKdxPCivLpSMhqSAeKGdnnbq0ntTl14gH40cH4wROiHbP4xIzBoZ4L/QAPb+cuvM2r6L7cSdN8xXkNoeImlKvPydIQk5Z785O3H70I0WQD/tGy+zu21VD26fjema48mWa8YBFqn0flR0a8zlex2K61dS3q3xQvnp0xW2PI+mYVNt0jsKBmRtegwuKNBoUvb1MSQqijJfjflVSw+SA8GbXizoi9JWPYRJmFkAxG96VXKvxc78/Zi7DVdvWC6+g+xDDGr5qq1UZKgekgXqo8SijykP03RWwsOsPvXhbJkZNpp7alHDVX1jwD3bSzDdDS195P7Yd/d+TZbtpZV0XtTAGXXIIJXd/9V/4pOrwL2N/3SEjkCTOfPd9CUdlD95Ko1dM/0xk9ZxhAu266Mqg6tdScj8wPAuRDZzd23NK4sV6oyb7j3al2yf8NW2/WpTgl8RmUJ10nyb/NJriT3aSM1LCo8TYfn9qeFuplvRlQr5gqAgZLWrHpavHB/OCJT5DSt+52rbsPaaLNBS346d4pGeq0Ltj10qslRRmxivKoWC/2iVXyabhS1/L4o+EGXanONFXIV0n3H8l3Oj3eT1Heh12GFnuZ4tNi6pXr+MwYSYWg6yLBHUNoI8/Ir+7WslEmVs3fWWAKFP0aCLHLYlq9X/V+MBjaeod1e2qdsxy8b5TD0NG3G/90B1h9N0r94lHU1+zrCMafTl//lPbxB/x859EC9vIJORgewTgmboq5qL8SjV2/mHLlGx2HPeJ0Lk4m7iGHi5scb84PEomLIbnV6m/bYTT+jQIdHR8HTvIyKD79eTaoBdmRUCTv/Awv7/QdaroFrmgnbMf9nZ/FxaZfdeaiKqxj76ay/NpJMMenzvLyBTak2Djm42YifaoG06O0nTJMFa6DmCucJeYrMFOa/f49af9PRr4RlThMN+JFOQ7A3LP+j+1esa8qmnC1bRXJJUeYUmWMV78iU7dSpaM27g1Y//Twt/8fn4H1zlqIcZsvIkCvRxOBnx4alz0uI9QyXHLMCe+0xyZopKWC3kZC8MeMbMI8GFu5qKZ//qD6+m85YPKwnAOLE8ZpOzg9rArNNti8a2qk1a1UDkScPGhRzYzf88WUJmbURBhIGDK2qpPwv6pn1WidQ3W0MxxVgQ28DXnAQ4qprWep7S4s/th0GSm+nb1LLgqddjbikopS6pJFT0ss5Wde7d1ZHFlEedrzYOCGKAaB30lPAk2iEO1rz4CzQLWLfUYZBwrdqAcPL4GUjo+rf2e9wPbqJ9LgLC/74wxdckz4eVrG3kaEQfRxCMKK2cA+Ve+weGFHXomStP/xQ/t8RJ4SMbZV6h/iXn/8YUQv//rKHXuv2FGXmH+UDeANc1fUZr9YGqmcOS+xhPMpibQAAAAA== 2x"
+                                alt class="map-company-logo" decoding="async"
+                                data-origin="/bitrix/templates/rapu/opt/img/map-companies/2.png">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
