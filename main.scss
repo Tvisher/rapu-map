@@ -1,0 +1,483 @@
+.rus-map {
+  width: 100%;
+  height: 100%;
+  height: 0;
+  padding-top: 50%;
+  position: relative;
+}
+
+[data-id] {
+  transition: fill 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  opacity: 0.9;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+    fill: red;
+  }
+}
+
+.rus-map__svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: top;
+  }
+}
+
+.location_ico {
+  pointer-events: none;
+  width: 0.8%;
+  height: 2%;
+  position: absolute;
+  svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    path {
+      fill: green;
+    }
+  }
+  &[data-ico="region_1"] {
+    left: 15.8%;
+    top: 75%;
+  }
+
+  &[data-ico="region_2"] {
+    left: 45%;
+    top: 85%;
+  }
+
+  &[data-ico="region_3"] {
+    left: 72%;
+    top: 71%;
+  }
+
+  &[data-ico="region_4"] {
+    left: 29%;
+    top: 49%;
+  }
+
+  &[data-ico="region_5"] {
+    left: 21.5%;
+    top: 79%;
+  }
+
+  &[data-ico="region_6"] {
+    left: 30%;
+    top: 72%;
+  }
+
+  &[data-ico="region_7"] {
+    left: 30%;
+    top: 72%;
+  }
+
+  &[data-ico="region_8"] {
+    left: 18.5%;
+    top: 58%;
+  }
+
+  &[data-ico="region_9"] {
+    left: 62%;
+    top: 77%;
+  }
+
+  &[data-ico="region_10"] {
+    left: 23.5%;
+    top: 58.5%;
+  }
+
+  &[data-ico="region_11"] {
+    left: 21%;
+    top: 71%;
+  }
+
+  &[data-ico="region_12"] {
+    left: 25%;
+    top: 51%;
+  }
+
+  &[data-ico="region_13"] {
+    left: 20%;
+    top: 66%;
+  }
+
+  &[data-ico="region_14"] {
+    left: 18.5%;
+    top: 86.5%;
+  }
+
+  &[data-ico="region_15"] {
+    left: 17%;
+    top: 68.3%;
+  }
+
+  &[data-ico="region_16"] {
+    display: none;
+  }
+
+  &[data-ico="region_17"] {
+    left: 76.6%;
+    top: 76.4%;
+  }
+
+  &[data-ico="region_18"] {
+    left: 66%;
+    top: 78%;
+  }
+
+  &[data-ico="region_19"] {
+    left: 15.5%;
+    top: 67%;
+  }
+
+  &[data-ico="region_20"] {
+    left: 24.7%;
+    top: 58%;
+  }
+
+  &[data-ico="region_21"] {
+    left: 17.6%;
+    top: 82.5%;
+  }
+
+  &[data-ico="region_22"] {
+    left: 58%;
+    top: 76%;
+  }
+
+  &[data-ico="region_23"] {
+    left: 16.8%;
+    top: 80.2%;
+  }
+
+  &[data-ico="region_24"] {
+    left: 15.3%;
+    top: 43.5%;
+  }
+
+  &[data-ico="region_25"] {
+    left: 20%;
+    top: 78%;
+  }
+
+  &[data-ico="region_26"] {
+    left: 20%;
+    top: 57%;
+  }
+
+  &[data-ico="region_27"] {
+    left: 83%;
+    top: 42%;
+  }
+
+  &[data-ico="region_28"] {
+    left: 16%;
+    top: 79%;
+  }
+
+  &[data-ico="region_29"] {
+    left: 25%;
+    top: 45%;
+  }
+
+  &[data-ico="region_30"] {
+    left: 48%;
+    top: 80%;
+  }
+
+  &[data-ico="region_31"] {
+    left: 29%;
+    top: 61%;
+  }
+
+  &[data-ico="region_32"] {
+    left: 34%;
+    top: 53%;
+  }
+
+  &[data-ico="region_33"] {
+    left: 26.5%;
+    top: 57%;
+  }
+
+  &[data-ico="region_34"] {
+    left: 16%;
+    top: 72.5%;
+  }
+
+  &[data-ico="region_35"] {
+    left: 52%;
+    top: 57%;
+  }
+
+  &[data-ico="region_36"] {
+    left: 13%;
+    top: 68%;
+  }
+
+  &[data-ico="region_37"] {
+    left: 35%;
+    top: 73.5%;
+  }
+
+  &[data-ico="region_38"] {
+    left: 18.5%;
+    top: 61%;
+  }
+
+  &[data-ico="region_39"] {
+    left: 22.6%;
+    top: 45.6%;
+  }
+
+  &[data-ico="region_40"] {
+    left: 20.5%;
+    top: 62.5%;
+  }
+
+  &[data-ico="region_41"] {
+    left: 18.2%;
+    top: 68%;
+  }
+
+  &[data-ico="region_42"] {
+    left: 76%;
+    top: 38%;
+  }
+
+  &[data-ico="region_43"] {
+    left: 27.5%;
+    top: 63%;
+  }
+
+  &[data-ico="region_44"] {
+    left: 24%;
+    top: 63.7%;
+  }
+
+  &[data-ico="region_45"] {
+    left: 22%;
+    top: 58.5%;
+  }
+
+  &[data-ico="region_46"] {
+    left: 30%;
+    top: 36%;
+  }
+
+  &[data-ico="region_47"] {
+    left: 37%;
+    top: 47.5%;
+  }
+
+  &[data-ico="region_48"] {
+    left: 21.5%;
+    top: 49%;
+  }
+
+  &[data-ico="region_49"] {
+    left: 25%;
+    top: 62%;
+  }
+
+  &[data-ico="region_50"] {
+    left: 43%;
+    top: 78%;
+  }
+
+  &[data-ico="region_51"] {
+    left: 40%;
+    top: 75%;
+  }
+
+  &[data-ico="region_52"] {
+    left: 28%;
+    top: 74%;
+  }
+
+  &[data-ico="region_53"] {
+    left: 19.5%;
+    top: 60%;
+  }
+
+  &[data-ico="region_54"] {
+    left: 23.5%;
+    top: 66%;
+  }
+
+  &[data-ico="region_55"] {
+    left: 32.5%;
+    top: 63%;
+  }
+
+  &[data-ico="region_56"] {
+    left: 80%;
+    top: 80%;
+  }
+
+  &[data-ico="region_57"] {
+    left: 20%;
+    top: 48%;
+  }
+
+  &[data-ico="region_58"] {
+    left: 18%;
+    top: 73%;
+  }
+
+  &[data-ico="region_59"] {
+    left: 65%;
+    top: 50%;
+  }
+
+  &[data-ico="region_60"] {
+    left: 26.5%;
+    top: 70%;
+  }
+
+  &[data-ico="region_61"] {
+    left: 23.5%;
+    top: 70%;
+  }
+
+  &[data-ico="region_62"] {
+    left: 81%;
+    top: 64%;
+  }
+
+  &[data-ico="region_63"] {
+    left: 35%;
+    top: 66%;
+  }
+
+  &[data-ico="region_64"] {
+    display: none;
+  }
+
+  &[data-ico="region_65"] {
+    left: 16.8%;
+    top: 82%;
+  }
+
+  &[data-ico="region_66"] {
+    left: 19%;
+    top: 54%;
+  }
+
+  &[data-ico="region_67"] {
+    left: 18%;
+    top: 78%;
+  }
+
+  &[data-ico="region_68"] {
+    left: 22%;
+    top: 65%;
+  }
+
+  &[data-ico="region_69"] {
+    left: 28%;
+    top: 67%;
+  }
+
+  &[data-ico="region_70"] {
+    left: 22%;
+    top: 53%;
+  }
+
+  &[data-ico="region_71"] {
+    left: 45%;
+    top: 72%;
+  }
+
+  &[data-ico="region_72"] {
+    left: 20.7%;
+    top: 59.5%;
+  }
+
+  &[data-ico="region_73"] {
+    left: 53%;
+    top: 86%;
+  }
+
+  &[data-ico="region_74"] {
+    left: 38%;
+    top: 72%;
+  }
+
+  &[data-ico="region_75"] {
+    left: 30%;
+    top: 65%;
+  }
+
+  &[data-ico="region_76"] {
+    left: 25.5%;
+    top: 67%;
+  }
+
+  &[data-ico="region_77"] {
+    left: 78%;
+    top: 67%;
+  }
+
+  &[data-ico="region_78"] {
+    left: 50%;
+    top: 83%;
+  }
+
+  &[data-ico="region_79"] {
+    left: 40%;
+    top: 63%;
+  }
+
+  &[data-ico="region_80"] {
+    left: 14%;
+    top: 65%;
+  }
+
+  &[data-ico="region_81"] {
+    left: 32.8%;
+    top: 73%;
+  }
+
+  &[data-ico="region_82"] {
+    left: 18.5%;
+    top: 83%;
+  }
+
+  &[data-ico="region_83"] {
+    left: 26%;
+    top: 64%;
+  }
+
+  &[data-ico="region_84"] {
+    left: 77%;
+    top: 20%;
+  }
+  &[data-ico="region_85"] {
+    left: 44%;
+    top: 57%;
+  }
+
+  &[data-ico="region_86"] {
+    left: 24%;
+    top: 55%;
+  }
+
+  &[data-ico="region_87"] {
+    left: 22.4%;
+    top: 61%;
+  }
+
+  &[data-ico="region_88"] {
+    left: 47.5%;
+    top: 88%;
+  }
+}
