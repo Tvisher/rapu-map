@@ -119,11 +119,15 @@
 }
 
 .location_ico {
+  transition: opacity 0.2s ease-in-out;
   opacity: 0;
   pointer-events: none;
   width: 0.8%;
   height: 2%;
   position: absolute;
+}
+.location_ico.show {
+  opacity: 1;
 }
 .location_ico svg {
   width: 100%;
@@ -535,6 +539,7 @@
   .rus-map {
     width: 1400px;
     padding-top: 700px;
+    margin-left: -150px;
   }
   .rus-map__svg > svg {
     margin-top: 5px;
