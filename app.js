@@ -4,6 +4,7 @@ function openModal(copyElement) {
     $infoModal.find('.modal-body').empty().append(modalContent);
     $infoModal.modal('show');
 }
+
 const isMobile = false;
 
 if ($('.map-popovers').length) {
